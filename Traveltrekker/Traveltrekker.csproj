@@ -59,11 +59,6 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\about.png" />
-	  <None Remove="Resources\Images\AJ1.jpg" />
-	  <None Remove="Resources\Images\AJ2.jpg" />
-	  <None Remove="Resources\Images\AJ3.jpg" />
-	  <None Remove="Resources\Images\AJ4.jpg" />
-	  <None Remove="Resources\Images\AJ5.jpg" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\kualalumpur.jpeg" />
 	  <None Remove="Resources\Images\kualalumpurlux.jpeg" />
@@ -85,9 +80,6 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Pages\About.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Test UI.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

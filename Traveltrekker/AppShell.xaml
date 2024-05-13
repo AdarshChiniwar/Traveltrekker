@@ -19,10 +19,10 @@
              ContentTemplate="{DataTemplate Pages:About}" />
         </Tab>
 
-        <Tab Title="Test" x:Name="Test" Icon="about.png">
+        <!--<Tab Title="Test" x:Name="Test" Icon="about.png">
             <ShellContent Title="Test" Shell.NavBarIsVisible="False"
          ContentTemplate="{DataTemplate Pages:Test_UI}" />
-        </Tab>
+        </Tab>-->
     </TabBar>
 
 </Shell>
