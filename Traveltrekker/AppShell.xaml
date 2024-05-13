@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Traveltrekker.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Traveltrekker"
+    xmlns:Pages="clr-namespace:Traveltrekker.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Travel Trekker">
+
+    <TabBar>
+        <Tab Title="Home" x:Name="Home" Icon="home.png">
+            <ShellContent Shell.NavBarIsVisible="False"
+             ContentTemplate="{DataTemplate local:MainPage}" /> 
+        </Tab>
+
+        <Tab Title="Home" x:Name="About" Icon="about.png">
+            <ShellContent Title="About" Shell.NavBarIsVisible="False"
+             ContentTemplate="{DataTemplate Pages:About}" />
+        </Tab>
+
+        <Tab Title="Test" x:Name="Test" Icon="about.png">
+            <ShellContent Title="Test" Shell.NavBarIsVisible="False"
+         ContentTemplate="{DataTemplate Pages:Test_UI}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

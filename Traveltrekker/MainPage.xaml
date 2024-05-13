@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Traveltrekker.MainPage"
+         
+             >
+
+    <Grid BackgroundColor="#F5F5F5">
+        <CollectionView ItemsSource="{Binding Packages}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="5,15,5,15"
+                          BackgroundColor="White"
+                          HeightRequest="300"
+                          StrokeShape="RoundRectangle 15,15,15,15"
+                          StrokeThickness="1"
+                           >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.4*"/>
+                                <RowDefinition Height="0.6*"/>
+                            </Grid.RowDefinitions>
+                            <Image Aspect="AspectFill" Source="{Binding Image}" />
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.3*"/>
+                                    <RowDefinition Height="0.3*"/>
+                                    <RowDefinition Height="0.5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.8*"/>
+                                        <ColumnDefinition Width="0.2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <VerticalStackLayout Margin="5,0,0,0">
+                                        <Label Text="{Binding Title}"
+                                               TextColor="Black"
+                                               FontAttributes="Bold"
+                                               FontSize="15"
+                                               />
+                                        <Label Text="{Binding Description}"
+                                               TextColor="Gray"
+                                               FontSize="Small"
+                                               />
+                                    </VerticalStackLayout>
+                                    <Border Grid.Column="1" Stroke="LightBlue" HorizontalOptions="EndAndExpand"
+                                            StrokeShape="RoundRectangle 5,5,5,5"
+                                            StrokeThickness="1" Margin="5"
+                                           HeightRequest="25" WidthRequest="50"
+                                            >
+                                        <Label Text="{Binding NoOfDays,FallbackValue='5N/6D'}"
+                                               TextColor="LightBlue" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               FontSize="12" />
+
+                                    </Border>
+                                </Grid>
+                                
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

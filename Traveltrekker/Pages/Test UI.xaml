@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Traveltrekker.Pages.Test_UI"
+             Title="Test_UI">
+    <Grid BackgroundColor="#0D0118" RowDefinitions="0.05*,.1*,.45*,.05*,.05*,.3*">
+        <Label FontSize="16"
+               HorizontalOptions="Center"
+               Text="Fairy Tales"
+               TextColor="White"
+               VerticalOptions="Center" />
+
+        <Grid Grid.Row="1" Margin="25,10,25,10">
+            <RoundRectangle 
+                CornerRadius="25"
+                Fill="#311B45"
+                HeightRequest="45"
+                />
+
+            <SearchBar CancelButtonColor="White"
+                       Placeholder="Search"
+                       PlaceholderColor="#AC9DB9"
+                       TextColor="White"
+                       VerticalOptions="Center"/>
+
+        </Grid>
+
+        <CarouselView Grid.Row="2"
+                      IndicatorView="indicatorView"
+                      ItemsSource="{Binding FairyTales}"
+                      PeekAreaInsets="30"
+                      >
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout 
+                    ItemSpacing="0"
+                    Orientation="Horizontal"
+                    SnapPointsAlignment="Center"
+                    SnapPointsType="MandatorySingle" />
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        
+                        <Border
+                          
+                            BackgroundColor="#311B45"
+                            HeightRequest="280"
+                            Stroke="#6E557C"
+                            StrokeShape="RoundRectangle 30,30,30,30"
+                            StrokeThickness="2"
+                            WidthRequest="280"
+                            >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.2*"/>
+                                    <RowDefinition Height="0.6*" />
+                                    <RowDefinition Height="0.2*" />
+                                </Grid.RowDefinitions>
+                                <Image Aspect="AspectFill"
+                                       Grid.RowSpan="3"
+                                       Source="{Binding Image}" />
+
+                                <RoundRectangle
+                                    Grid.RowSpan="3"
+                                    CornerRadius="30"
+                                    HeightRequest="300"
+                                    WidthRequest="300"
+                                    Opacity="0.7">
+                                    <RoundRectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0,1">
+                                            <GradientStop Offset="0" Color="Transparent" />
+                                            <GradientStop Offset="1" Color="#030005" />
+                                        </LinearGradientBrush>
+                                    </RoundRectangle.Fill>
+                                    
+                                </RoundRectangle>
+                                <VerticalStackLayout Grid.Row="2" Margin="20,0,0,0">
+                                    <Label Text="{Binding ReadTime, StringFormat='Read time: {0:%m} mind'}"
+                                                                TextColor="White" />
+                                    <Label FontSize="Large"
+                                           Text="{Binding Name}"
+                                           TextColor="White" />
+                                </VerticalStackLayout>
+                                <Label Text="&#xF097;"
+                                       TextColor="White"
+                                       FontSize="25"
+                                       FontFamily="Icons"
+                                       Margin="0,20,20,0"
+                                       HorizontalOptions="End"
+                                       />
+                            </Grid>
+                            
+                            <Border.Shadow>
+                                <Shadow Brush="#C283FD"
+                                        Opacity="0.7"
+                                        Radius="100"
+                                        Offset="0,0" />
+
+                            </Border.Shadow>
+
+                        </Border>
+                    
+                        
+                    </Grid>
+                    
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+            
+        </CarouselView>
+
+        <IndicatorView
+            x:Name="indicatorView"
+            Grid.Row="3"
+            HorizontalOptions="Center"
+            IndicatorColor="#616161"
+            IndicatorSize="8"
+            SelectedIndicatorColor="White"
+            VerticalOptions="Center" />
+
+    </Grid>
+</ContentPage>
